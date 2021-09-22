@@ -120,4 +120,8 @@ export default class Game extends LightningElement {
         }
         this.sortable.destroy();
     }
+
+    restart() {
+        window.location.reload();
+    }
 }

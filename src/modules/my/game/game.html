@@ -66,6 +66,13 @@
                     <div class="slds-text-heading_large slds-m-top_x-large">
                         🎉 🎉 🎉 Your score is: {score} 🎉 🎉 🎉
                     </div>
+                    <br />
+                    <button
+                        class="slds-button slds-button_brand"
+                        onclick={restart}
+                    >
+                        Choose another theme
+                    </button>
                 </template>
                 <template if:false={gameOver}>
                     <button
