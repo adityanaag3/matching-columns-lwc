@@ -15,18 +15,18 @@
     background: rgb(255, 215, 215);
 }
 
-.slds-tile__detail{
+.slds-tile__detail {
     display: flex;
     align-items: center;
     min-height: 50px;
 }
 
-.waiting{
+.waiting {
     margin-top: 2rem;
 }
 
-.spinner{
-    position:relative;
+.spinner {
+    position: relative;
     margin-bottom: 15px;
     height: 1rem;
     margin-top: 6rem;

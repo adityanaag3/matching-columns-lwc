@@ -50,7 +50,7 @@ export default class Game extends LightningElement {
                 }
             );
             this.waitCountdown = setInterval(() => {
-                if(this.waitTimeLeft > 1){
+                if (this.waitTimeLeft > 1) {
                     this.waitTimeLeft--;
                 } else {
                     this.startGame();
@@ -60,7 +60,7 @@ export default class Game extends LightningElement {
         }
     }
 
-    startGame(){
+    startGame() {
         this.gameStarted = true;
         const d = new Date();
         this.startTimestamp = d.getTime();

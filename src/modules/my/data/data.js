@@ -155,7 +155,8 @@ export const data = [
     },
     {
         theme: 'Governor Limits',
-        question: 'Match the governor limit description with its corresponding number',
+        question:
+            'Match the governor limit description with its corresponding number',
         iconurl: '/resources/icons/utility-sprite/svg/symbols.svg#warning',
         column1: [
             {
