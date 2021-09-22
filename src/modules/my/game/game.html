@@ -1,0 +1,88 @@
+<template>
+    <div class="slds-m-top_large slds-text-align_center slds-m-bottom_large">
+        <my-timer
+            duration-in-seconds={totalSeconds}
+            seconds-left={secondsLeft}
+        ></my-timer>
+    </div>
+    <template if:true={themeData}>
+        <div
+            class="slds-m-top_large slds-text-align_center slds-m-bottom_large"
+        >
+            <div class="slds-text-heading_large">{themeData.question}</div>
+        </div>
+        <template if:true={gameStarted}>
+
+       
+        <div
+            class="
+                slds-grid slds-grid_align-center
+                slds-gutters
+                slds-grid_vertical-align-center
+            "
+        >
+            <div class="slds-col slds-size_2-of-3">
+                <div class="slds-grid slds-grid_align-center slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <ol class="slds-has-dividers_around-space">
+                            <template
+                                for:each={themeData.column1}
+                                for:item="colData"
+                            >
+                                <li class="slds-item" key={colData.key}>
+                                    <article class="slds-tile slds-tile_board">
+                                        <div class="slds-tile__detail">
+                                            <p class="slds-text-heading_medium">
+                                                {colData.pos}. {colData.value}
+                                            </p>
+                                        </div>
+                                    </article>
+                                </li>
+                            </template>
+                        </ol>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <ol
+                            class="sortable slds-has-dividers_around-space"
+                            lwc:dom="manual"
+                        ></ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="slds-m-top_large slds-text-align_center slds-m-bottom_large"
+        >
+            <template if:true={gameOver}>
+                <div class="slds-text-heading_large slds-m-top_x-large">
+                    🎉 🎉 🎉 Your score is: {score} 🎉 🎉 🎉
+                </div>
+            </template>
+            <template if:false={gameOver}>
+                <button
+                    class="slds-button slds-button_brand"
+                    onclick={validate}
+                >
+                    Done, verify my answers
+                </button>
+            </template>
+        </div>
+    </template>
+    
+    
+    <template if:false={gameStarted}>
+        <div class="spinner">
+        
+            <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+              <span class="slds-assistive-text">Loading</span>
+              <div class="slds-spinner__dot-a"></div>
+              <div class="slds-spinner__dot-b"></div>
+            </div>
+          </div>
+        <div class="slds-text-heading_small waiting slds-text-align_center">
+            Options will appear and timer will start in {waitTimeLeft} seconds
+        </div>
+        
+    </template>
+    </template>
+</template>

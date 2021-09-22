@@ -1,0 +1,33 @@
+.sortable .slds-item {
+    background: white;
+    cursor: grab;
+}
+
+.ghost {
+    opacity: 0.5;
+}
+
+.sortable .correct {
+    background: rgb(228, 255, 187);
+}
+
+.sortable .wrong {
+    background: rgb(255, 215, 215);
+}
+
+.slds-tile__detail{
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+}
+
+.waiting{
+    margin-top: 2rem;
+}
+
+.spinner{
+    position:relative;
+    margin-bottom: 15px;
+    height: 1rem;
+    margin-top: 6rem;
+}

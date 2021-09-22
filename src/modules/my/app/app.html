@@ -1,0 +1,8 @@
+<template>
+    <template if:true={selectedTheme}>
+        <my-game theme={selectedTheme}></my-game>
+    </template>
+    <template if:false={selectedTheme}>
+        <my-splash onthemeselected={handleThemeSelect}></my-splash>
+    </template>
+</template>

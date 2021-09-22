@@ -1,0 +1,97 @@
+<template>
+    <div class="slds-m-top_xx-large slds-text-align_center slds-m-bottom_large">
+        <img
+            src="/resources/match-columns-logo.png"
+            class="logo slds-m-top_xx-large slds-m-bottom_xx-large"
+        />
+        <div class="slds-text-heading_large">Select a theme</div>
+    </div>
+
+    <div
+        class="
+            slds-grid slds-grid_align-center
+            slds-gutters
+            slds-grid_vertical-align-center
+        "
+    >
+        <div class="slds-col slds-size_2-of-3">
+            <div
+                class="slds-grid slds-wrap slds-grid_align-center slds-gutters"
+            >
+                <template for:each={themes} for:item="theme">
+                    <div
+                        class="slds-col slds-size_1-of-1 slds-large-size_1-of-3"
+                        key={theme.name}
+                    >
+                        <a
+                            onclick={handleClick}
+                            data-theme={theme.name}
+                            class="
+                                slds-box slds-box_link slds-box_x-small
+                                slds-media
+                                slds-m-top_medium
+                            "
+                        >
+                            <div
+                                class="
+                                    slds-media__figure
+                                    slds-media__figure_fixed-width
+                                    slds-align_absolute-center
+                                    slds-m-left_xx-small
+                                "
+                            >
+                                <span
+                                    class="
+                                        slds-icon_container
+                                        slds-icon-utility-knowledge_base
+                                    "
+                                >
+                                    <svg
+                                        class="slds-icon slds-icon-text-default"
+                                        aria-hidden="true"
+                                    >
+                                        <use xlink:href={theme.icon}></use>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div
+                                class="
+                                    slds-media__body
+                                    slds-border_left
+                                    slds-p-around_small
+                                "
+                            >
+                                <h2
+                                    class="
+                                        slds-truncate
+                                        slds-text-heading_small
+                                    "
+                                    title={theme.name}
+                                >
+                                    {theme.name}
+                                </h2>
+                            </div>
+                        </a>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+    <div class="slds-m-top_xx-large slds-text-align_center slds-m-bottom_large">
+        Built by Aditya Naag Topalli<br /><a
+            href="http://adityanaag.com"
+            target="_blank"
+            >Website</a
+        >&nbsp;|&nbsp;<a href="https://twitter.com/adityanaag" target="_blank"
+            >Twitter</a
+        >&nbsp;|&nbsp;<a
+            href="https://www.linkedin.com/in/adityanaag3/"
+            target="_blank"
+            >LinkedIn</a
+        >&nbsp;|&nbsp;<a
+            href="https://github.com/adityanaag3/matching-columns-lwc"
+            target="_blank"
+            >Source Code</a
+        >
+    </div>
+</template>
