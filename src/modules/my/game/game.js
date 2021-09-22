@@ -2,7 +2,7 @@ import { LightningElement, api } from 'lwc';
 import { data } from 'my/data';
 import Sortable from 'sortablejs';
 
-const TOTAL_SECONDS = 45;
+const TOTAL_SECONDS = 60;
 const CHARACTERS = 'abcdefghijklmno';
 const WAIT_SECONDS = 10;
 
