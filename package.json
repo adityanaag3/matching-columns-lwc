@@ -7,7 +7,8 @@
         "compression": "^1.7.4",
         "express": "^4.17.1",
         "helmet": "^4.6.0",
-        "sortablejs": "^1.14.0"
+        "sortablejs": "^1.14.0",
+        "node-fetch": "^3.0.0"
     },
     "devDependencies": {
         "eslint": "^7.32.0",
@@ -18,7 +19,7 @@
         "prettier": "^2.3.2"
     },
     "engines": {
-        "node": ">=10.13.0",
+        "node": "<=16.2.0",
         "npm": ">=6.4.1",
         "yarn": ">=1.9.4"
     },
@@ -28,6 +29,17 @@
     ],
     "license": "MIT",
     "repository": "adityanaag3/matching-columns-lwc",
+    "nodemonConfig": {
+        "watch": [
+            "src/server/**/*.js"
+        ],
+        "ext": "js",
+        "ignore": [
+            "src/**/*.spec.js",
+            "src/**/*.test.js"
+        ],
+        "exec": "node ./src/server/api.js"
+    },
     "scripts": {
         "build": "lwc-services build -m production",
         "build:development": "lwc-services build",
@@ -36,11 +48,15 @@
         "precommit": "npm run prettier:verify && [ $? -eq 0 ] && npm run lint",
         "prettier": "prettier --write \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
         "prettier:verify": "prettier --list-different \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
-        "start": "node scripts/server.js",
+        "start": "run-p start:client start:api",
+        "start:api": "node src/server/api.js",
+        "start:client": "node scripts/server.js",
         "test:unit": "lwc-services test:unit",
         "test:unit:coverage": "lwc-services test:unit --coverage",
         "test:unit:debug": "lwc-services test:unit --debug",
         "test:unit:watch": "lwc-services test:unit --watch",
-        "watch": "lwc-services watch"
+        "watch": "run-p watch:client watch:server",
+        "watch:client": "lwc-services watch",
+        "watch:server": "nodemon"
     }
 }

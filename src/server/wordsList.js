@@ -1,6 +1,7 @@
-export const data = [
+const wordsList = [
     {
         theme: 'Dreamforce',
+        id: 'df',
         question: 'Match the celebrity speaker to the Dreamforce year',
         iconurl:
             '/resources/icons/utility-sprite/svg/symbols.svg#swarm_request',
@@ -52,6 +53,7 @@ export const data = [
     },
     {
         theme: 'Product Names',
+        id: 'products',
         question:
             "Match the product's original name to its current rebranded name",
         iconurl: '/resources/icons/utility-sprite/svg/symbols.svg#fallback',
@@ -103,6 +105,7 @@ export const data = [
     },
     {
         theme: 'Trailhead Ranks',
+        id: 'thr',
         question:
             'Match the Trailhead Rank with the minimum number of badges needed to achieve it',
         iconurl:
@@ -155,6 +158,7 @@ export const data = [
     },
     {
         theme: 'Governor Limits',
+        id: 'limits',
         question:
             'Match the governor limit description with its corresponding number',
         iconurl: '/resources/icons/utility-sprite/svg/symbols.svg#warning',
@@ -206,6 +210,7 @@ export const data = [
     },
     {
         theme: 'Superbadges',
+        id: 'superbadges',
         question:
             'Match the superbadge with the number of points gained by completing it',
         iconurl:
@@ -258,6 +263,7 @@ export const data = [
     },
     {
         theme: 'SFDX Commands',
+        id: 'sfdx',
         question:
             "Match the parameter names of the force:source:deploy command with it's purpose",
         iconurl:
@@ -309,3 +315,5 @@ export const data = [
         ans: ['u', 'o', 'm', 'r', 'c']
     }
 ];
+
+module.exports = wordsList;

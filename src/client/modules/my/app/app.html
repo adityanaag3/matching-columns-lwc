@@ -1,0 +1,8 @@
+<template>
+    <template if:true={gameObj}>
+        <my-game game-obj={gameObj}></my-game>
+    </template>
+    <template if:false={gameObj}>
+        <my-splash onthemeselected={handleThemeSelect}></my-splash>
+    </template>
+</template>

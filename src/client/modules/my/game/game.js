@@ -1,5 +1,4 @@
 import { LightningElement, api } from 'lwc';
-import { data } from 'my/data';
 import Sortable from 'sortablejs';
 
 const TOTAL_SECONDS = 60;
@@ -7,7 +6,7 @@ const CHARACTERS = 'abcdefghijklmno';
 const WAIT_SECONDS = 10;
 
 export default class Game extends LightningElement {
-    @api theme;
+    @api gameObj;
     themeData;
     sortInitialized = false;
 
@@ -25,6 +24,7 @@ export default class Game extends LightningElement {
 
     score = 0;
     gameStarted = false;
+    player_id;
 
     waitTimeLeft = WAIT_SECONDS;
     waitCountdown;
@@ -37,10 +37,9 @@ export default class Game extends LightningElement {
     }
 
     connectedCallback() {
-        if (this.theme) {
-            this.themeData = data.filter((el) => {
-                return el.theme === this.theme;
-            })[0];
+        if (this.gameObj) {
+            this.player_id = localStorage.getItem('player_id');
+            this.themeData = JSON.parse(JSON.stringify(this.gameObj));
             this.themeData.column1 = this.themeData.column1.map(
                 (ele, index) => {
                     return {
@@ -119,6 +118,20 @@ export default class Game extends LightningElement {
             this.score += this.secondsLeft;
         }
         this.sortable.destroy();
+        const updateScoreBody = {"player_id": this.player_id, "score": this.score};
+        fetch('/api/savescore', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updateScoreBody)
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+            }).catch((e) => {
+                console.error(e);
+            });
     }
 
     restart() {

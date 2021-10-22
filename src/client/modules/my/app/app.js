@@ -1,9 +1,9 @@
 import { LightningElement } from 'lwc';
 
 export default class App extends LightningElement {
-    selectedTheme;
+    gameObj;
 
     handleThemeSelect(event) {
-        this.selectedTheme = event.detail.name;
+        this.gameObj = event.detail.gameObj;
     }
 }
