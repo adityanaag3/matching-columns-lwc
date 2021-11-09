@@ -5,11 +5,13 @@ const express = require('express');
 const path = require('path');
 
 // eslint-disable-next-line no-shadow
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const fetch = (...args) =>
+    import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 const app = express();
 app.use(helmet());
 app.use(compression());
+app.use(express.json());
 
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 3002;
@@ -33,11 +35,14 @@ app.get('/api/getletters', (req, res) => {
     });
     let letterResponse = {};
     letterResponse.wordsList = wordsList;
-    if(LEADERBOARD_URL && wordsList.length > 0){
+    if (LEADERBOARD_URL && wordsList.length > 0) {
         // Post Scores to external service
-        const scoreReq = {game_id: 'wordsearch_' + id, player_name: player_name};
-        
-        fetch(LEADERBOARD_URL + '/insertplayer',{
+        const scoreReq = {
+            game_id: 'matchcolumns_' + id,
+            player_name: player_name
+        };
+
+        fetch(LEADERBOARD_URL + '/insertplayer', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -48,7 +53,8 @@ app.get('/api/getletters', (req, res) => {
             .then((data) => {
                 letterResponse.player_id = data.id;
                 res.json(letterResponse);
-            }).catch((e) => {
+            })
+            .catch((e) => {
                 console.error(e);
                 res.json(letterResponse);
             });
@@ -58,7 +64,7 @@ app.get('/api/getletters', (req, res) => {
 });
 
 app.post('/api/savescore', (req, res) => {
-    if(LEADERBOARD_URL){
+    if (LEADERBOARD_URL) {
         // Post Scores to external service
         fetch(LEADERBOARD_URL + '/insertscore', {
             method: 'POST',
@@ -70,11 +76,12 @@ app.post('/api/savescore', (req, res) => {
             .then((response) => response.json())
             .then((data) => {
                 res.send(data);
-            }).catch((e) => {
+            })
+            .catch((e) => {
                 console.error(e);
             });
     } else {
-        res.send({"success": true});
+        res.send({ success: true });
     }
 });
 
