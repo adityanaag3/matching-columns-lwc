@@ -1,9 +1,9 @@
 import { LightningElement, api } from 'lwc';
 import Sortable from 'sortablejs';
 
-const TOTAL_SECONDS = 60;
+const TOTAL_SECONDS = 240;
 const CHARACTERS = 'abcdefghijklmno';
-const WAIT_SECONDS = 10;
+const WAIT_SECONDS = 5;
 
 export default class Game extends LightningElement {
     @api gameObj;
@@ -118,7 +118,10 @@ export default class Game extends LightningElement {
             this.score += this.secondsLeft;
         }
         this.sortable.destroy();
-        const updateScoreBody = {"player_id": this.player_id, "score": this.score};
+        const updateScoreBody = {
+            player_id: this.player_id,
+            score: this.score
+        };
         fetch('/api/savescore', {
             method: 'POST',
             headers: {
@@ -129,7 +132,8 @@ export default class Game extends LightningElement {
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
-            }).catch((e) => {
+            })
+            .catch((e) => {
                 console.error(e);
             });
     }

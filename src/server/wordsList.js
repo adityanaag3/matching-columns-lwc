@@ -313,6 +313,178 @@ const wordsList = [
             }
         ],
         ans: ['u', 'o', 'm', 'r', 'c']
+    },
+    {
+        theme: 'Animals',
+        id: 'animals',
+        question: 'Match the animal and its baby',
+        iconurl:
+            '/resources/icons/utility-sprite/svg/symbols.svg#collection_variable',
+        column1: [
+            {
+                key: 'cow',
+                value: 'Cow'
+            },
+            {
+                key: 'dog',
+                value: 'Dog'
+            },
+            {
+                key: 'cat',
+                value: 'Cat'
+            },
+            {
+                key: 'shp',
+                value: 'Sheep'
+            },
+            {
+                key: 'Rbt',
+                value: 'Rabbit'
+            }
+        ],
+        column2: [
+            {
+                key: 'l',
+                value: 'Lamb'
+            },
+            {
+                key: 'c',
+                value: 'Calf'
+            },
+            {
+                key: 'b',
+                value: 'Bunny'
+            },
+            {
+                key: 'k',
+                value: 'Kitten'
+            },
+            {
+                key: 'p',
+                value: 'Puppy'
+            }
+        ],
+        ans: ['c', 'p', 'k', 'l', 'b']
+    },
+    {
+        theme: 'Bulk API and Mulesoft',
+        id: 'test-anz21',
+        question: 'Match the terms on the left with their purpose',
+        iconurl:
+            '/resources/icons/utility-sprite/svg/symbols.svg#collection_variable',
+        column1: [
+            {
+                key: 'raml',
+                value: 'RAML'
+            },
+            {
+                key: 'ac',
+                value: 'Anypoint Connectors'
+            },
+            {
+                key: 'mc',
+                value: 'Mulesoft Composer'
+            },
+            {
+                key: 'ae',
+                value: 'Anypoint Exchange'
+            },
+            {
+                key: 'pq',
+                value: 'POST /services/data/vXX.X/jobs/query'
+            },
+            {
+                key: 'gq',
+                value: 'GET /services/data/vXX.X/jobs/query'
+            }
+        ],
+        column2: [
+            {
+                key: 'asset',
+                value: 'Store private assets in a central repository or access publicly shared resources'
+            },
+            {
+                key: 'post',
+                value: 'Creates a query job'
+            },
+            {
+                key: 'integrate',
+                value: 'Enables you to integrate a Mule app with third-party APIs'
+            },
+            {
+                key: 'flows',
+                value: 'Build flows to integrate systems and data and automate integration tasks'
+            },
+            {
+                key: 'specs',
+                value: 'Can be used to write API specifications'
+            },
+            {
+                key: 'get',
+                value: 'Gets information about all query jobs in the org'
+            }
+        ],
+        ans: ['specs', 'integrate', 'flows', 'asset', 'post', 'get']
+    },
+    {
+        theme: 'Bulk API and Mulesoft',
+        id: 'anz21',
+        question: 'Match the terms on the left with their purpose',
+        iconurl:
+            '/resources/icons/utility-sprite/svg/symbols.svg#collection_variable',
+        column1: [
+            {
+                key: 'raml',
+                value: 'RAML'
+            },
+            {
+                key: 'ac',
+                value: 'Anypoint Connectors'
+            },
+            {
+                key: 'mc',
+                value: 'Mulesoft Composer'
+            },
+            {
+                key: 'ae',
+                value: 'Anypoint Exchange'
+            },
+            {
+                key: 'pq',
+                value: 'POST /services/data/vXX.X/jobs/query'
+            },
+            {
+                key: 'gq',
+                value: 'GET /services/data/vXX.X/jobs/query'
+            }
+        ],
+        column2: [
+            {
+                key: 'asset',
+                value: 'Store private assets in a central repository or access publicly shared resources'
+            },
+            {
+                key: 'post',
+                value: 'Creates a query job'
+            },
+            {
+                key: 'integrate',
+                value: 'Enables you to integrate a Mule app with third-party APIs'
+            },
+            {
+                key: 'flows',
+                value: 'Build flows to integrate systems and data and automate integration tasks'
+            },
+            {
+                key: 'specs',
+                value: 'Can be used to write API specifications'
+            },
+            {
+                key: 'get',
+                value: 'Gets information about all query jobs in the org'
+            }
+        ],
+        ans: ['specs', 'integrate', 'flows', 'asset', 'post', 'get']
     }
 ];
 
