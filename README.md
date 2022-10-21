@@ -4,7 +4,7 @@ Matching Columns is a game where you'll have to match an item in one column with
 
 ## How to play?
 
-1. Navigate to [this Heroku App](https://matching-columns-lwc.herokuapp.com/).
+1. Navigate to [this Heroku App](https://lwc-games.herokuapp.com/matching-columns).
 1. Use any of the following game codes
     1. `df`: Match the celebrity speaker to the Dreamforce year
     3. `products`: Match the product's original name to its current rebranded name
